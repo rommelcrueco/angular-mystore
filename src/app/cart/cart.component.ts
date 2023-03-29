@@ -27,9 +27,25 @@ export class CartComponent {
 
   
   onSubmit() {
-    // Process checkout data here:
-    this.items = this.cartService.clearCart();
-    console.warn('Your order has been submitted', this.checkOutForm.value);
-    this.checkOutForm.reset();
+    if (this.validateCart()) {
+      console.warn('Your order has been submitted', this.checkOutForm.value);
+      this.items = this.cartService.clearCart();
+      this.checkOutForm.reset();
+      alert('Order successful!');
+    }
+  }
+
+
+  validateCart(): boolean {
+    // Validate the form:
+    if(this.cartService.getItems().length === 0
+      || this.checkOutForm.value.name === null 
+      || this.checkOutForm.value.address === null
+      || this.checkOutForm.value.name?.trim().length === 0 
+      || this.checkOutForm.value.address?.trim().length === 0) {
+      alert('Cart, Name, Address cannot be empty!');
+      return false;
+    }
+    return true;
   }
 }
