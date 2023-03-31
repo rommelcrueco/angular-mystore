@@ -18,7 +18,11 @@ https://www.c-sharpcorner.com/article/how-to-deploy-and-host-an-angular-applicat
 
 
 ### Using the App Guide:
-1. Click on the item you want to buy.
+1. From the list, click on the name of the item.
 2. Click the "Buy" button and will be added to your cart.
-3. Click the Checkout button at the upper right. It will show the items added to your cart. 
+3. Click the "Checkout" button at the upper right. It will show the items added to your cart. 
 4. Open the dev console (press F12). Click the "Purchase" button. You can see the details of your purchase in the dev console.
+
+
+### Running Unit Test:
+> todo
